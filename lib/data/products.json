@@ -1,0 +1,82 @@
+[
+    {
+      "id": 0,
+      "name": "Mesahenz 400mg Tablet 10's",
+      "category": "Oral",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/m/e/mes0077_2.jpg",
+      "description": "Mesahenz 400mg Tablet 10's belongs to a class of drugs called 'anti-inflammatory drugs' used to treat ulcerative colitis and Crohn’s disease.  Ulcerative colitis is a type of chronic inflammatory bowel disease that causes inflammation of the large intestine lining (colon). It produces ulcers on the colon's lining, which may cause bleeding and discharge of pus and mucus.",
+      "price": "75.05"
+    },
+    {
+      "id": 1,
+      "name": "New Coldact Capsule 20's",
+      "category": "Oral",
+      "description": "New Coldact Capsule 20's belongs to the combination medication called 'anti-allergics' primarily used to treat symptoms caused by the common cold, flu, allergies and other breathing problems like sinusitis and bronchitis. ",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/c/o/col1105_4.jpg",
+      "price": "128.80"
+    },
+    {
+      "id": 2,
+      "name": "Crocin 650 Tablet 15's",
+      "category": "ORAL",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/c/r/cro0023.jpg",
+      "description": "Crocin Tablets is mildly analgesic, which helps in treating mild fever; works as a pain reliever",
+      "price": "28.98"
+    },
+    {
+      "id": 3,
+      "name": "Azithral-500 Tablet 5's",
+      "category": "ORAL",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/a/z/azi0013_1.jpg",
+      "description": "Azithral-500 Tablet 5's belongs to a group of medicines known as macrolide antibiotics. It is used to treat various respiratory system bacterial infections (like pneumonia, bronchitis, tonsillitis, pharyngitis and sinusitis), skin infections (like acne and rosacea), ear infections, and sexually transmitted infections. ",
+      "price": "121.44"
+    },
+    {
+      "id": 4,
+      "name": "Myestra 2 Tablet 14's  ",
+      "category": "ORAL",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/m/y/mye0017_2.jpg",
+      "description": "Myestra 2 Tablet 14's contains a semi-synthetic female hormone, used as hormonal replacement therapy for treating hypoestrogenism (estrogen deficiency), osteoporosis (thinning of bones), symptoms associated with menopause (itching, dryness in vagina, hot flushes)",
+      "price": "152.58"
+    },
+    {
+      "id": 5,
+      "name": "Monte Levo Tablet 10's",
+      "category": "Oral",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/m/o/mon0677.jpg",
+      "description": "Monte Levo Tablet 10's is a combination of anti-allergic drugs, consisting of two medicines: Levocetirizine and Montelukast, primarily used to treat allergic symptoms. Levocetirizine blocks the effects of a chemical messenger known as 'histamine,' which is naturally involved in allergic reactions",
+      "price": "188.99"
+    },
+    {
+      "id": 6,
+      "name": "Otrivin Oxy Fast Relief Adult Nasal Spray 10 ml",
+      "category": "NASAL",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/o/t/otr0041_1.jpg",
+      "description": "Otrivin Oxy Fast Relief Adult Nasal Spray provides effective relief from a blocked nose; unblocks and clears in 25 seconds",
+      "price": "91.68"
+    },
+    {
+      "id": 7,
+      "name": "ORSL Apple Drink 200 ml",
+      "category": "Oral",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/8/9/8901012350010_apple_3.jpg",
+      "description": "ORSL Apple Drink 200 ml is a combination of electrolytes used to treat or prevent dehydration (too much loss of body water). It is indicated as a source of electrolytes, water, and calories. A sufficient amount of fluids, electrolytes and minerals are necessary for the normal functioning of the body.",
+      "price": "39.90"
+    },
+    {
+      "id": 8,
+      "name": "Vicks Inhaler, 0.5 ml",
+      "category": "Inhalation",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/4/9/4987176014955_2_.jpg",
+      "description": "A stuffy nose picks no time or place. Great thing nasal relief can be found - and carried - anywhere, anytime. Economical, compact and effective, Vicks Inhaler has been giving fast and temporary 'mobile' relief from nasal clogging due to colds. This little gem of a tube soothes clogged nose and easily fits in your pockets. You can be assured that wherever cold gets to you, nasal relief is just one sniff away.",
+      "price": "62.99"
+    },
+    {
+      "id": 9,
+      "name": "Zandu Balm, 8 ml",
+      "category": "Topical",
+      "imageUrl": "https://newassets.apollo247.com/pub/media/catalog/product/z/a/zan0011_1_1.jpg",
+      "description": "Zandu Balm is the perfect solution for headaches, body aches, and cold. It is India’s no. 1 pain relief balm that provides instant and long-lasting relief from body pains of all kinds. An Ayurvedic solution that is 100% safe and effective.",
+      "price": "42.00"
+    }
+  ]

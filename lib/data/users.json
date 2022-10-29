@@ -1,0 +1,32 @@
+[{
+  "id": 0,
+  "name": "Ramya Mohan",
+  "email": "ramya.mohan@gmail.com",
+  "pwd": "abc",
+  "orders": []
+},
+
+{
+  "id": 1,
+  "name": "Priya Mohan",
+  "email": "priya.mohan@gmail.com",
+  "pwd": "abc",
+  "orders": []
+},
+
+{
+  "id": 2,
+  "name": "Malathi Mohan",
+  "email": "Malathi.mohan@gmail.com",
+  "pwd": "abc",
+  "orders": []
+},
+
+{
+  "id": 3,
+  "name": "Sreeja Mohan",
+  "email": "sreeja.mohan@gmail.com",
+  "pwd": "abc",
+  "orders": []
+}
+]
