@@ -1,0 +1,10 @@
+^C:\USERS\RAMYA\ONEDRIVE\DOCUMENTS\ELEARN\SEMESTER 2\CPAD\MY_APP\ASSIGNMENT_2\ONLINE_PHARMACY_ASSIGNMENT\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/windows" "-BC:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows" --check-stamp-file "C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

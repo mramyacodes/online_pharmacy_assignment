@@ -1,0 +1,11 @@
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/icudtl.dat
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/web/icons/doctor-svgrepo-com.svg
+C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/runner/Debug/data/flutter_assets/web/icons/laboratory-microscope-svgrepo-com.svg

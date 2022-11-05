@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\build\windows\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\build\windows\flutter\x64\Debug\flutter_assemble</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\build\windows\runner\Debug\online_pharmacy_assignment.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

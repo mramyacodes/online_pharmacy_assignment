@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\build\windows\CMakeFiles\c0d7ab74d04e965e9b319510d1f0228b\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CF74D350-0E8E-3134-8C61-21B19695E3D1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

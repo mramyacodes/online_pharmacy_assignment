@@ -170,6 +170,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
           hintText: 'Search Medicines',
         ),
       ),
+      //Icon(Icons.shopping_cart_checkout_rounded)
     );
   }
 }

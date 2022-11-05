@@ -1,92 +1,209 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' as rootBundle;
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:online_pharmacy_assignment/UserDataModel.dart';
+import 'package:online_pharmacy_assignment/models/_OrdersDetail.dart';
+import 'package:online_pharmacy_assignment/pages/HomeScreen.dart';
+
+import '../models/OrdersDetail.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  int userid;
+  MainScreen({required this.userid});
+  static const String routeName = '/product-list';
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  _MainScreenState createState() => _MainScreenState(userid: userid);
 }
 
 class _MainScreenState extends State<MainScreen> {
-  @override
-  Widget build(BuildContext context) {
-    // return Container(
-    //     color: Colors.yellow.shade100,
-    //     alignment: Alignment.center,
-    //     child: const Text(
-    //       'Home',
-    //       style: TextStyle(fontSize: 40),
-    //     ));
-    return Scaffold(
-        body: FutureBuilder(
-            future: ReadJsonData(),
-            builder: (context, data) {
-              if (data.hasError) {
-                return Center(child: Text("${data.error}"));
-              } else if (data.hasData) {
-                var items = data.data as List<UserDataModel>;
-                return ListView.builder(
-                    itemCount: items == null ? 0 : items.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        elevation: 5,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 6),
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                  child: Container(
-                                padding: const EdgeInsets.only(bottom: 8),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 8, right: 8),
-                                      child: Text(
-                                        items[index].name.toString(),
-                                        style: const TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 8, right: 8),
-                                      child:
-                                          Text(items[index].email.toString()),
-                                    )
-                                  ],
-                                ),
-                              ))
-                            ],
-                          ),
-                        ),
-                      );
-                    });
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            }));
+  int userid;
+  _MainScreenState({required this.userid});
+  List<OrdersDataModel> allProducts = [];
+  List<OrdersDataModel> filteredProducts = [];
+
+  initState() {
+    readJsonFile();
   }
 
-  Future<List<UserDataModel>> ReadJsonData() async {
-    final jsondata =
-        await rootBundle.rootBundle.loadString('lib/data/users.json');
-    final list = json.decode(jsondata) as List<dynamic>;
-    return list.map((e) => UserDataModel.fromJson(e)).toList();
+  Future<void> readJsonFile() async {
+    final String response = await rootBundle.loadString('lib/data/orders.json');
+    final productData = await json.decode(response);
+
+    var list = productData["orders"] as List<dynamic>;
+
+    setState(() {
+      allProducts = [];
+      allProducts = list.map((e) => OrdersDataModel.fromJson(e)).toList();
+      filteredProducts = allProducts;
+      _runFilter(userid.toString());
+    });
+  }
+
+  void _runFilter(String searchKeyword) {
+    List<OrdersDataModel> results = [];
+
+    if (searchKeyword.isEmpty) {
+      results = allProducts;
+    } else {
+      results = allProducts
+          .where(
+            (element) =>
+                element.userid
+                    .toString()
+                    .contains(searchKeyword.toLowerCase()) &&
+                (element.status.toString().contains("O") ||
+                    element.status.toString().contains("I")),
+          )
+          .toList();
+      if (results.length > 3) {
+        filteredProducts.clear();
+        filteredProducts.add(results[0]);
+        filteredProducts.add(results[1]);
+        filteredProducts.add(results[2]);
+      } else {
+        filteredProducts = results;
+      }
+    }
+  }
+
+  String getStsdesc(String Sts) {
+    if (Sts == 'I') {
+      return 'Incomplete';
+    } else {
+      return 'Open';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        //    backgroundColor: Color.fromARGB(70, 255, 64, 128),
+        resizeToAvoidBottomInset: true,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // if (allProducts.length > 0)
+            filteredProducts.isEmpty
+                ? Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: Text(
+                      'No Pending Orders',
+                      style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: Text(
+                      'Your Pending Orders',
+                      style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+            Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: filteredProducts.length,
+                itemBuilder: (BuildContext context, index) {
+                  return Dismissible(
+                    key: ValueKey(filteredProducts[index].id.toString()),
+                    background: Container(
+                      color: Colors.redAccent,
+                      child: Icon(Icons.delete, color: Colors.white, size: 40),
+                      padding: EdgeInsets.all(8.0),
+                      margin: EdgeInsets.all(8.0),
+                    ),
+                    direction: DismissDirection.endToStart,
+                    confirmDismiss: (direction) {
+                      return showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          title: Text("Please Confirm"),
+                          content: Text("Are you sure you want to delete?"),
+                          actions: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(ctx).pop(false);
+                                },
+                                child: Text("Cancel")),
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(ctx).pop(true);
+                                },
+                                child: Text("Delete")),
+                          ],
+                        ),
+                      );
+                    },
+                    onDismissed: (DismissDirection direction) {
+                      if (direction == DismissDirection.endToStart) {
+                        filteredProducts.removeAt(index);
+                      }
+                    },
+                    child: Card(
+                        margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                        color: Color.fromARGB(205, 249, 178, 230),
+                        child: ListTile(
+                          title: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                                'Order ID - ${filteredProducts[index].id}'),
+                          ),
+                          subtitle: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Status : ${getStsdesc(filteredProducts[index].status.toString())} ',
+                                  style: TextStyle(fontStyle: FontStyle.normal),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Items : ${filteredProducts[index].itemcount}',
+                                  style: TextStyle(fontStyle: FontStyle.normal),
+                                  textAlign: TextAlign.right,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Total : ₹${filteredProducts[index].total!}',
+                                  style: TextStyle(fontStyle: FontStyle.normal),
+                                ),
+                              ],
+                            ),
+                          ),
+                          onTap: () {
+                            // print(jsonEncode(products[index]));
+                            // Navigator.of(context).pushNamed(
+                            //     ProductDetailScreen.routeName,
+                            //     arguments: jsonEncode(filteredProducts[index]));
+                          },
+                        )),
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            )
+
+            // else
+            // Container(child: Text("No products"),)
+          ],
+        ),
+      ),
+    );
   }
 }

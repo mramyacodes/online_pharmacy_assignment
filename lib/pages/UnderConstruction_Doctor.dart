@@ -14,7 +14,7 @@ class _UnderConstruction_DoctorState extends State<UnderConstruction_Doctor> {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(color: Colors.deepPurple[100]),
+        decoration: BoxDecoration(),
         // color: Color.fromARGB(77, 207, 207, 207),
         // alignment: Alignment.center,
         child: Column(

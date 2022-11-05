@@ -1,0 +1,4 @@
+#Sat Nov 05 12:46:43 IST 2022
+base.0=C\:\\Users\\ramya\\OneDrive\\Documents\\eLearn\\Semester 2\\CPAD\\my_app\\assignment_2\\online_pharmacy_assignment\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

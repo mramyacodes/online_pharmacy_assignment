@@ -12,7 +12,7 @@ class _UnderConstruction_LabState extends State<UnderConstruction_Lab> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: const Color.fromARGB(77, 207, 207, 207),
+        // color: Color.fromARGB(255, 238, 232, 232),
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

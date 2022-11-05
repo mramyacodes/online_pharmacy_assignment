@@ -1,29 +1,53 @@
-import 'package:flutter/material.dart';
-import 'package:online_pharmacy_assignment/pages/MainScreen.dart';
-import 'package:online_pharmacy_assignment/pages/UnderConstruction_Lab.dart';
+import 'dart:ffi';
 
-import 'ShoppingCart.dart';
+import 'package:flutter/material.dart';
+import 'package:online_pharmacy_assignment/models/OrdersDetail.dart';
+import 'package:online_pharmacy_assignment/pages/MainScreen.dart';
+import 'package:online_pharmacy_assignment/pages/OrdersScreen.dart';
+import 'package:online_pharmacy_assignment/pages/ShoppingCart.dart';
+import 'package:online_pharmacy_assignment/pages/UnderConstruction_Lab.dart';
+import 'package:online_pharmacy_assignment/pages/OrdersScreen.dart';
+
 import 'UnderConstruction_Doctor.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  int userid;
+
+  HomeScreen({required this.userid});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState(userid: userid);
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int userid;
+  int parm = 0;
+  _HomeScreenState({required this.userid}) {
+    parm = userid;
+  }
+
+  static OrdersDataModel ord = new OrdersDataModel(0, 0, 0, 0, '', []);
   final List pages = [
     // Content for Home tab
-    MainScreen(),
+    MainScreen(userid: 0),
     UnderConstruction_Doctor(),
     UnderConstruction_Lab(),
-    ShoppingCart(),
+    OrdersScreen(order: ord)
+    // ShoppingCart()
   ];
 
   // final List pages = [MainScreen(), UnderConstruction(), ShoppingCart()];
 
   int _selectedIndex = 0;
+
+  bool ishomescreen() {
+    if (_selectedIndex == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-          Expanded(child: pages[_selectedIndex])
+          ishomescreen()
+              ? Expanded(
+                  child: MainScreen(
+                  userid: userid,
+                ))
+              : Expanded(child: pages[_selectedIndex])
         ],
       ),
     );

@@ -1,0 +1,28 @@
+^C:\USERS\RAMYA\ONEDRIVE\DOCUMENTS\ELEARN\SEMESTER 2\CPAD\MY_APP\ASSIGNMENT_2\ONLINE_PHARMACY_ASSIGNMENT\BUILD\WINDOWS\CMAKEFILES\83F535348E1FA69F350791633EC24975\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\ramya\flutter "PROJECT_DIR=C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment" FLUTTER_ROOT=C:\Users\ramya\flutter "FLUTTER_EPHEMERAL_DIR=C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\windows\flutter\ephemeral" "PROJECT_DIR=C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment" "FLUTTER_TARGET=C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\lib\main.dart" DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false "PACKAGE_CONFIG=C:\Users\ramya\OneDrive\Documents\eLearn\Semester 2\CPAD\my_app\assignment_2\online_pharmacy_assignment\.dart_tool\package_config.json" C:/Users/ramya/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RAMYA\ONEDRIVE\DOCUMENTS\ELEARN\SEMESTER 2\CPAD\MY_APP\ASSIGNMENT_2\ONLINE_PHARMACY_ASSIGNMENT\BUILD\WINDOWS\CMAKEFILES\C0D7AB74D04E965E9B319510D1F0228B\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RAMYA\ONEDRIVE\DOCUMENTS\ELEARN\SEMESTER 2\CPAD\MY_APP\ASSIGNMENT_2\ONLINE_PHARMACY_ASSIGNMENT\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/windows" "-BC:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows" --check-stamp-file "C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/build/windows/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

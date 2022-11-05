@@ -7,7 +7,7 @@ class MedicinesDataModel {
   String? category;
   String? imageUrl;
   String? description;
-  String? price;
+  double? price;
 
   MedicinesDataModel(this.id, this.name, this.category, this.imageUrl,
       this.description, this.price);
@@ -36,6 +36,6 @@ class MedicinesDataModel {
 
   factory MedicinesDataModel.fromJson(Map<String, dynamic> json) {
     return MedicinesDataModel(json['id'], json['name'], json['category'],
-        json['imageUrl'], json['description'], json['price']);
+        json['imageUrl'], json['description'], json['price'] as double);
   }
 }
