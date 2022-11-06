@@ -207,7 +207,8 @@ class _MedicineDetailsPageState extends State<MedicineDetailsPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OrdersScreen(order: order)),
+                        builder: (context) =>
+                            OrdersScreen(order: order, maxid: 0)),
                   );
                   //HomeScreen();
                 },

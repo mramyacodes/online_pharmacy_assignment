@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:online_pharmacy_assignment/models/OrdersDetail.dart';
 import 'package:online_pharmacy_assignment/pages/MainScreen.dart';
+import 'package:online_pharmacy_assignment/pages/OrdersDashboard.dart';
 import 'package:online_pharmacy_assignment/pages/OrdersScreen.dart';
 import 'package:online_pharmacy_assignment/pages/ShoppingCart.dart';
 import 'package:online_pharmacy_assignment/pages/UnderConstruction_Lab.dart';
@@ -32,7 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
     MainScreen(userid: 0),
     UnderConstruction_Doctor(),
     UnderConstruction_Lab(),
-    OrdersScreen(order: ord)
+    OrdersDashboard(
+      order: ord,
+      userId: 0,
+    )
     // ShoppingCart()
   ];
 
@@ -122,12 +126,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-          ishomescreen()
+          // ishomescreen()
+          //     ? Expanded(
+          //         child: MainScreen(
+          //         userid: userid,
+          //       ))
+          //     : Expanded(child: pages[_selectedIndex])
+          _selectedIndex == 0
               ? Expanded(
                   child: MainScreen(
                   userid: userid,
                 ))
-              : Expanded(child: pages[_selectedIndex])
+              : _selectedIndex == 1
+                  ? Expanded(child: pages[_selectedIndex])
+                  : _selectedIndex == 2
+                      ? Expanded(child: pages[_selectedIndex])
+                      : Expanded(
+                          child: OrdersDashboard(
+                          order: ord,
+                          userId: userid,
+                        ))
         ],
       ),
     );

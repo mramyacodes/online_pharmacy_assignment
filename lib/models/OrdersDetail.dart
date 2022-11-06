@@ -15,7 +15,7 @@ class OrdersDataModel {
     userid ??= 0;
     total ??= 0;
     status ??= '';
-    medorders = [];
+    medorders;
   }
 
   factory OrdersDataModel.fromJson(Map<String, dynamic> parsedJson) {
