@@ -190,7 +190,7 @@ class _OrdersDashboardState extends State<OrdersDashboard> {
                             // Navigator.of(context).pushNamed(
                             //     ProductDetailScreen.routeName,
                             //     arguments: jsonEncode(filteredProducts[index]));
-
+                            userOrders[index].id = 0;
                             Navigator.push(
                               context,
                               MaterialPageRoute(

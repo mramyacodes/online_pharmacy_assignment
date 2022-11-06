@@ -3,8 +3,8 @@
         {
             "id": 1,
             "userid": 1,
-            "total": 128.80,
-            "itemcount": 1,
+            "total": 186.76,
+            "itemcount": 2,
             "status": "C",
             "medorder": [  {
                 "medid": 1,
@@ -86,6 +86,30 @@
                 "medid": 1,
                 "itemqty": 1,
                 "itemtotal": 128.80
+            }]
+        },
+        {
+            "id": 8,
+            "userid": 1,
+            "total": 10.00,
+            "itemcount": 1,
+            "status": "C",
+            "medorder": [{
+                "medid": 1,
+                "itemqty": 1,
+                "itemtotal": 10.00
+            }]
+        },
+        {
+            "id": 9,
+            "userid": 1,
+            "total": 121.44,
+            "itemcount": 1,
+            "status": "C",
+            "medorder": [{
+                "medid": 3,
+                "itemqty": 1,
+                "itemtotal": 121.44
             }]
         }
     ]

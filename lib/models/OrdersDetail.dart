@@ -31,6 +31,19 @@ class OrdersDataModel {
         parsedJson['status'],
         medordersList);
   }
+
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> result = HashMap();
+    result.addAll({
+      'id': id,
+      'userid': userid,
+      'total': total,
+      'itemcount': itemcount,
+      'status': status,
+      'medorder': medorders
+    });
+    return result;
+  }
 }
 
 class MedicineOrder {

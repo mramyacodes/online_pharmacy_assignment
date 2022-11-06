@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +32,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   List allmedicines = [];
   List<MedicinesDataModel> _medicines = <MedicinesDataModel>[];
   List<MedicinesDataModel> _medicinesDisplay = <MedicinesDataModel>[];
-
+  List<OrdersDataModel> allOrders = [];
   initState() {
     if (order.id == 0) {
       order.id = maxid;
@@ -43,7 +44,40 @@ class _OrdersScreenState extends State<OrdersScreen> {
         //print(_medicinesDisplay.length);
       });
     });
+
+    readfromJsonOrdersFile().then((value) => allOrders);
     filteredProducts = order.medorders;
+  }
+
+  Future<void> _orderSubmit() async {
+    List<OrdersDataModel> filteredOrders = [];
+    String searchKeyword;
+    searchKeyword = order.id.toString();
+    filteredOrders = allOrders
+        .where(
+          (element) =>
+              element.id.toString().contains(searchKeyword.toLowerCase()),
+        )
+        .toList();
+    OrdersDataModel thisOrder;
+    late int index;
+    if (filteredOrders.isEmpty) {
+      allOrders.add(order);
+    } else {
+      index = allOrders.indexWhere(
+        (element) =>
+            element.id.toString().contains(searchKeyword.toLowerCase()),
+      );
+      allOrders[index] = order;
+    }
+    //final File file = File('lib/data/orders.json');
+    final _filePath = await _localFile;
+    _filePath.writeAsString(jsonEncode(allOrders));
+  }
+
+  Future<File> get _localFile async {
+    return File(
+        'C:/Users/ramya/OneDrive/Documents/eLearn/Semester 2/CPAD/my_app/assignment_2/online_pharmacy_assignment/lib/data/orders.json');
   }
 
   @override
@@ -125,7 +159,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                           title: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                                'Order ID - ${filteredProducts[index].medid}'),
+                                'Medicine ID - ${filteredProducts[index].medid}'),
                           ),
                           subtitle: Padding(
                             padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
@@ -158,7 +192,35 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 },
               ),
             ),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35),
+              child: MaterialButton(
+                minWidth: double.infinity,
+                onPressed: () {
+                  _orderSubmit();
+                },
+                child: const Text('Check Out'),
+                color: Colors.teal,
+                textColor: Colors.white,
+                height: 50,
+              ),
+            )
           ])),
     ));
   }
+}
+
+Future<List<OrdersDataModel>> readfromJsonOrdersFile() async {
+  final String response = await rootBundle.loadString('lib/data/orders.json');
+  final productData = await json.decode(response);
+
+  var list = productData["orders"] as List<dynamic>;
+  List<OrdersDataModel> allOrders = [];
+
+  allOrders = [];
+  allOrders = list.map((e) => OrdersDataModel.fromJson(e)).toList();
+  return allOrders;
 }
